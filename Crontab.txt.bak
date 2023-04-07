@@ -1,0 +1,8 @@
+@reboot sleep 60; bash /home/pi/vpn.sh >> /home/pi/log 2>&1
+@reboot sleep 60; /usr/bin/env python3 /home/pi/pro/importJS.py
+#*/1 * * * * DISPLAY=:0.0 /usr/bin/env python3 /home/pi/pro/keypadPin.py
+0 8 * * * sudo shutdown -r
+0 18 * * * sudo shutdown -r
+*/1 * * * * /usr/bin/python /home/pi/pro/connect.py
+0 * * * * /usr/bin/env python3 /home/pi/pro/exportJS.py
+*/55 * * * * /usr/bin/env python3 /home/pi/pro/importJS.py
